@@ -11,8 +11,8 @@ const Pricing = () => {
       <div className="py-24 px-8 max-w-5xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <p className="font-medium text-primary mb-8">Pricing</p>
-          <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
-            Save hours of repetitive code and ship faster!
+          <h2 className="font-bold text-3xl lg:text-4xl tracking-tight">
+            End global finance tracking hassles.
           </h2>
         </div>
 
@@ -78,7 +78,7 @@ const Pricing = () => {
                         >
                           <path
                             fillRule="evenodd"
-                            d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                            d="M97.6667 158.333C134.486 158.333 164.333 128.486 164.333 91.6667C164.333 54.8477 134.486 25 97.6667 25C60.8477 25 31 54.8477 31 91.6667C31 128.486 60.8477 158.333 97.6667 158.333Z"
                             clipRule="evenodd"
                           />
                         </svg>

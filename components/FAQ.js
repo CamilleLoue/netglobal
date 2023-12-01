@@ -8,7 +8,13 @@ import { useRef, useState } from "react";
 const faqList = [
   {
     question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        You get a dashboard that tracks your selected global bank accounts,
+        with a built-in managing and budgeting tool for your finances across
+        these accounts.
+      </div>
+    ),
   },
   {
     question: "Can I get a refund?",
