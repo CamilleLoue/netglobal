@@ -2,10 +2,10 @@ import themes from "daisyui/src/theming/themes.js";
 
 const config = {
   // REQUIRED
-  appName: "ShipFast",
+  appName: "NetGlobal",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+    "All your bank accounts from around the world in one dashboard.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "shipfa.st",
   crisp: {
@@ -26,18 +26,18 @@ const config = {
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "Starter",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
+        description: "Perfect for chill internationals",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 79,
+        price: 49,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 99,
+        priceAnchor: 79,
         features: [
           {
-            name: "NextJS boilerplate",
+            name: "Multi-accounts dashboard",
           },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
+          { name: "Up to 3 accounts" },
+          { name: "As many currencies" },
+          { name: "Bugeting" },
         ],
       },
       {
@@ -48,17 +48,17 @@ const config = {
             ? "price_1O5KtcAxyNprDp7iftKnrrpw"
             : "price_456",
         name: "Advanced",
-        description: "You need more power",
-        price: 99,
-        priceAnchor: 149,
+        description: "You're a real global citizen",
+        price: 79,
+        priceAnchor: 99,
         features: [
           {
-            name: "NextJS boilerplate",
+            name: "Multi-accounts dashboard",
           },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
+          { name: "Unlimited number of accounts" },
+          { name: "As many currencies" },
+          { name: "Bugeting" },
+          { name: "Wealth flow optimisation" },
           { name: "24/7 support" },
         ],
       },
