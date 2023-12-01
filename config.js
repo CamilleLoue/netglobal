@@ -37,7 +37,7 @@ const config = {
           },
           { name: "Up to 3 accounts" },
           { name: "As many currencies" },
-          { name: "Bugeting" },
+          { name: "Budgeting" },
         ],
       },
       {
@@ -57,7 +57,7 @@ const config = {
           },
           { name: "Unlimited number of accounts" },
           { name: "As many currencies" },
-          { name: "Bugeting" },
+          { name: "Budgeting" },
           { name: "Wealth flow optimisation" },
           { name: "24/7 support" },
         ],
