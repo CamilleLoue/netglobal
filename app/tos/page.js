@@ -59,37 +59,50 @@ const TOS = () => {
         >
           {`Last Updated: September 26, 2023
 
-Welcome to ShipFast!
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+Sure, here is a simple Terms of Service agreement for your website, NetGlobal, as of the current date:
 
-1. Description of ShipFast
+Terms of Service
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+Effective Date: [Insert Date]
 
-2. Ownership and Usage Rights
+1. Introduction
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+Welcome to NetGlobal! These Terms of Service ("Terms") govern your use of the website located at https://netglobal.io (the "Website"). By accessing or using the Website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use the Website.
 
-3. User Data and Privacy
+2. Ownership
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
+When you purchase a package on our Website, you own your own banking data. However, please note that you do not own the graphs or dashboards generated from your banking data. You may request a full refund within seven (7) days after your purchase if you are not satisfied with our services.
+
+3. User Data
+
+When using our Website, we collect the following user data:
+
+Name
+Email address
+Payment information
+Banking data uploaded by you
+For more details on how we collect, use, and protect your data, please refer to our Privacy Policy.
 
 4. Non-Personal Data Collection
 
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
+We use web cookies for website analytics and functionality. You can manage your cookie preferences through your browser settings.
 
 5. Governing Law
 
-These Terms are governed by the laws of France.
+These Terms are governed by the laws of the United Kingdom (UK).
 
 6. Updates to the Terms
 
-We may update these Terms from time to time. Users will be notified of any changes via email.
+We may update these Terms from time to time for operational, legal, or regulatory reasons. Users will be notified of significant changes via email. We encourage you to review these Terms periodically.
 
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
+7. Contact Information
 
-Thank you for using ShipFast!`}
+If you have any questions, concerns, or requests regarding these Terms or any other matter related to our services, please contact us at:
+
+Email: contact@netglobal.io.
+
+Thank you for using NetGlobal!`}
         </pre>
       </div>
     </main>
