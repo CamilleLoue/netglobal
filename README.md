@@ -59,15 +59,6 @@ To get started with NetGlobal on your local development environment, follow thes
 
 5.  Access the application in your browser at [http://localhost:3000](http://localhost:3000/).
 
-Additional Documentation
-------------------------
-
-For more detailed information on project setup, architecture, and usage, please refer to the project's documentation.
-
-Contributing
-------------
-
-Contributions to NetGlobal are welcome! If you have suggestions, bug reports, or feature requests, please submit an issue or create a pull request.
 
 License
 -------
