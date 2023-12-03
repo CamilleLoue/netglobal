@@ -49,23 +49,15 @@ const TOS = () => {
           </svg>
           Back
         </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Terms and Conditions for {config.appName}
+        <h1 className="text-3xl font-extrabold pb-6 mt-2">
+          Terms of Services
         </h1>
 
         <pre
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: September 26, 2023
-
-
-Sure, here is a simple Terms of Service agreement for your website, NetGlobal, as of the current date:
-
-Terms of Service
-
-Effective Date: [Insert Date]
-
+          {`
 1. Introduction
 
 Welcome to NetGlobal! These Terms of Service ("Terms") govern your use of the website located at https://netglobal.io (the "Website"). By accessing or using the Website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use the Website.
@@ -102,7 +94,10 @@ If you have any questions, concerns, or requests regarding these Terms or any ot
 
 Email: contact@netglobal.io.
 
-Thank you for using NetGlobal!`}
+Thank you for using NetGlobal!
+
+Last Updated: 03-12-2023
+`}
         </pre>
       </div>
     </main>

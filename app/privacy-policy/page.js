@@ -49,16 +49,15 @@ const PrivacyPolicy = () => {
           </svg>{" "}
           Back
         </Link>
-        <h1 className="text-3xl font-extrabold pb-6">
-          Privacy Policy for {config.appName}
+        <h1 className="text-3xl font-extrabold pb-6 mt-2">
+          Privacy Policy
         </h1>
 
         <pre
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: 2023-08-25
-
+          {`
 1. Introduction
 
 Welcome to NetGlobal! This Privacy Policy explains how NetGlobal ("we," "us," or "our") collects, uses, and safeguards your personal information when you use our website, https://netglobal.io (the "Website"). We are committed to protecting your privacy and ensuring the security of your personal information.
@@ -104,7 +103,9 @@ Email: contact@netglobal.io
 
 For all other inquiries, please visit our Contact Us page on the Website.
 
-By using ShipFast, you consent to the terms of this Privacy Policy.`}
+By using NetGlobal, you consent to the terms of this Privacy Policy.
+
+Last Updated: 03-12-2023`}
         </pre>
       </div>
     </main>
