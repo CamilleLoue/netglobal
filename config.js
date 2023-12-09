@@ -28,9 +28,9 @@ const config = {
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
         description: "Perfect for chill internationals",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 49,
+        price: 5,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 79,
+        priceAnchor: 10,
         features: [
           {
             name: "Multi-accounts dashboard",
@@ -49,8 +49,8 @@ const config = {
             : "price_456",
         name: "Advanced",
         description: "You're a real global citizen",
-        price: 79,
-        priceAnchor: 99,
+        price: 10,
+        priceAnchor: 25,
         features: [
           {
             name: "Multi-accounts dashboard",
