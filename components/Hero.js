@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
+import ButtonCheckout from "./ButtonCheckout";
 import config from "@/config";
 import graph from "@/app/graph.jpg";
 
@@ -11,12 +12,16 @@ const Hero = () => {
           All your global bank accounts in one place.
         </h1>
         <p className="text-lg opacity-80 leading-relaxed">
-          The dashboard designed to centralize and simplify your global financial
-          oversight.
+          The dashboard designed to centralize and simplify your global
+          financial oversight.
         </p>
-        <button className="btn btn-primary btn-wide">
-          Get {config.appName}
-        </button>
+        <ButtonCheckout
+          priceId={config.stripe.plans[0].priceId}
+        >
+          <button className="btn btn-primary btn-wide">
+            Get {config.appName}
+          </button>
+        </ButtonCheckout>
 
         <TestimonialsAvatars priority={true} />
       </div>

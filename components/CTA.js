@@ -1,5 +1,7 @@
 import Image from "next/image";
 import background from "@/app/background.png";
+import ButtonCheckout from "./ButtonCheckout";
+import config from "@/config";
 
 const CTA = () => {
   return (
@@ -17,10 +19,12 @@ const CTA = () => {
             Visualise, manage, boost your bank accounts
           </h2>
           <p className="text-lg opacity-80 mb-12 md:mb-16">
-            Grow your global wealth, don&apos;t spend time on international banking puzzles.
+            Grow your global wealth, don&apos;t spend time on international
+            banking puzzles.
           </p>
-
-          <button className="btn btn-primary btn-wide">Get NetGlobal</button>
+          <ButtonCheckout priceId={config.stripe.plans[0].priceId}>
+            <button className="btn btn-primary btn-wide">Get NetGlobal</button>
+          </ButtonCheckout>
         </div>
       </div>
     </section>
