@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
-import config from "@/config";
+import ButtonLead from "./ButtonLead";
+// import config from "@/config";
 import graph from "@/app/graph.jpg";
 
 const Hero = () => {
@@ -14,9 +15,10 @@ const Hero = () => {
           The dashboard designed to centralize and simplify your global financial
           oversight.
         </p>
-        <button className="btn btn-primary btn-wide">
+        {/* <button className="btn btn-primary btn-wide">
           Get {config.appName}
-        </button>
+        </button> */}
+        <ButtonLead />
 
         <TestimonialsAvatars priority={true} />
       </div>

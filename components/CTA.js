@@ -1,5 +1,6 @@
 import Image from "next/image";
 import background from "@/app/background.png";
+import ButtonLead from "./ButtonLead";
 
 const CTA = () => {
   return (
@@ -20,7 +21,8 @@ const CTA = () => {
             Grow your global wealth, don&apos;t spend time on international banking puzzles.
           </p>
 
-          <button className="btn btn-primary btn-wide">Get NetGlobal</button>
+          {/* <button className="btn btn-primary btn-wide">Get NetGlobal</button> */}
+          <ButtonLead />
         </div>
       </div>
     </section>
