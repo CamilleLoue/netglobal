@@ -21,14 +21,14 @@ const faqList = [
     answer: (
       <p>
         Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
+        by email: contact@netglobal.io
       </p>
     ),
   },
   {
     question: "I have another question",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, contact us by email</div>
+      <div className="space-y-2 leading-relaxed">Cool, contact us by email: contact@netglobal.io</div>
     ),
   },
 ];
