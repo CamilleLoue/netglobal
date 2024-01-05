@@ -12,7 +12,7 @@ Features
 
 ### Google Authentication
 
--   User authentication is powered by Google OAuth, ensuring a reliable and secure login process. Developers can extend and customize authentication flows as needed.
+-   User authentication is powered by Google OAuth, ensuring a reliable and secure login process. Yay. Developers can extend and customize authentication flows as needed.
 
 ### Stripe Payment Integration
 
