@@ -10,15 +10,17 @@ import {DroppableColumn} from "@/app/dashboard/add-data/DroppableColumn";
 import {Item} from "@/app/dashboard/add-data/Item";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import FormComponent from "@/app/dashboard/add-data/FormComponent";
 
 
-const defaultTransactions = [{id: 0, 'values': {'0': '24/02/2023', '1': 'Store', '2': 25.26}},
-  {id: 1, 'values': {'0': '24/03/2023', '1': 'Store 2', '2': 23.26}}]
+const defaultTransactions = [{id: 0, 'values': {'0': '24/02/2023', '1': 'Store', '2': 25.26, '3': 29000}},
+  {id: 1, 'values': {'0': '24/03/2023', '1': 'Store 2', '2': 23.26, '3': 30000}}]
 
 const targetValues = [
     {'column': 'Transaction Date', 'values': []},
   {'column': 'Description', 'values': []},
-  {'column': 'Amount', 'values': []}]
+  {'column': 'Amount', 'values': []},
+  {'column': 'Balance', 'values': []}]
 
 
 export default function AddData() {
@@ -26,6 +28,9 @@ export default function AddData() {
   const [transactions, setTransactions] = useState(defaultTransactions);
   const [columns, setColumns] = useState(['0', '1', '2']);
   const [targets, setTargets] = useState(targetValues);
+  const [bankName, setBankName] = useState(null);
+  const [accountType, setAccountType] = useState(null);
+  const [currency, setCurrency] = useState(null);
 
 
   const handleCsvUpload = (e) => {
@@ -71,49 +76,28 @@ export default function AddData() {
         console.log(newTransactions)
         setTransactions(newTransactions)
       }});
-
-
-/*    try {
-      const text = await csvFile.text(); // Read the CSV file as text
-      const { data } = Papa.parse(text, { header: true }); // Parse CSV into JSON with headers
-
-      for (const row of data) {
-        const {
-          "Bank Name": bank_name,
-          "Account Type": account_type,
-          "Transaction Date": transaction_date,
-          "Description": description,
-          "Amount": amount,
-          "Currency": currency,
-          "Balance": balance,
-        } = row;
-        console.log("Sending data:", {
-          bank_name: bank_name,
-            account_type: account_type,
-            transaction_date: transaction_date,
-            description: description,
-            amount: parseFloat(amount),
-            currency: currency,
-            balance: parseFloat(balance),
-        });
-        await apiClient.post("/transactions", [
-          {
-            bank_name: bank_name,
-            account_type: account_type,
-            transaction_date: transaction_date,
-            description: description,
-            amount: parseFloat(amount),
-            currency: currency,
-            balance: parseFloat(balance),
-          },
-        ]);
-      }
-    } catch (error) {
-      console.error("Error while adding transactions:", error);
-    }*/
   };
 
-  const columnMap = ['Date', "Name", "Amount", "Category"]
+  const handleSubmitData = async () => {
+
+    const transactions = targets[0].values.map((_, index) => {
+      const transaction = {};
+      targets.forEach(column => {
+        // Assuming that the order of 'values' in each column corresponds to the same transaction
+        const valueObject = column.values[index];
+        // Create a key-value pair in the transaction object
+        transaction[column.column] = valueObject.value;
+      });
+      return transaction;
+    });
+    transactions.forEach(transaction => {
+      transaction["Bank Name"] = bankName;
+      transaction["Account Type"] = accountType;
+      transaction["Currency"] = currency;
+    });
+    await apiClient.post("/transactions", transactions
+    );
+  }
 
   const handleDrop = (droppedItem, destination) => {
     if (!destination || destination.index < 0 || destination.index > columns.length + 1) return;
@@ -176,14 +160,23 @@ export default function AddData() {
             onClick={handleAddData}
             className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
           >
-            Add Transactions
+            Load file
           </button>
         </form>
+        <button
+            type="button"
+            onClick={handleSubmitData}
+            className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+        >
+          Submit
+        </button>
+        <FormComponent setBankName={setBankName} setAccountType={setAccountType} setCurrency={setCurrency} />
       </section>
+      <section className="space-y-8">
       <DndProvider backend={HTML5Backend}>
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDrop}>
-        <div className="absolute left-[6.15%] right-[2.14%] top-[32.06%]">
-          <div className="flex flex-row items-center justify-center text-lg bg-gray-900">
+        <div className="w-full h-72">
+          <div className="w-full flex flex-row items-center justify-center text-lg bg-gray-900">
             {targets.map((item, index) => (
             <DroppableColumn key={index} col={item} index={index} type={'transactions-col'} handleDrop={handleDrop}>
               <div
@@ -213,6 +206,7 @@ export default function AddData() {
         </div>
       </DndContext>
         </DndProvider>
+      </section>
     </main>
   );
 }
