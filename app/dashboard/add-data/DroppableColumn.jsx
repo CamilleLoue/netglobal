@@ -1,18 +1,23 @@
 import React from 'react';
-import {useDroppable} from '@dnd-kit/core';
+import {useDrop} from "react-dnd";
 
-export function DroppableColumn({col, type, id, children}) {
-    const {isOver, setNodeRef} = useDroppable({
+export function DroppableColumn({col, type, id, children, handleDrop}) {
+    const [, drop] = useDrop({
+        accept: 'TRANSACTIONS',
         data: {type: type, item: col},
         id: id,
+        drop: (item) => {
+            console.log('HAA')
+            handleDrop(item, col)
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+        }),
     });
-    const style = {
-        color: isOver ? 'green' : undefined,
-    };
 
 
     return (
-        <div ref={setNodeRef} style={style}>
+        <div ref={drop} >
             {children}
         </div>
     );

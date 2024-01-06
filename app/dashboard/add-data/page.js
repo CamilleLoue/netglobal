@@ -15,7 +15,10 @@ import {faPlus} from "@fortawesome/free-solid-svg-icons";
 const defaultTransactions = [{id: 0, 'values': {'0': '24/02/2023', '1': 'Store', '2': 25.26}},
   {id: 1, 'values': {'0': '24/03/2023', '1': 'Store 2', '2': 23.26}}]
 
-const targetValues = [{'column': 'Date', 'values': []}, {'column': 'Name', 'values': []}, {'column': 'Amount', 'values': []}]
+const targetValues = [
+    {'column': 'Transaction Date', 'values': []},
+  {'column': 'Description', 'values': []},
+  {'column': 'Amount', 'values': []}]
 
 
 export default function AddData() {
@@ -112,35 +115,25 @@ export default function AddData() {
 
   const columnMap = ['Date', "Name", "Amount", "Category"]
 
-  const handleDrop = (droppedItem) => {
+  const handleDrop = (droppedItem, destination) => {
+    if (!destination || destination.index < 0 || destination.index > columns.length + 1) return;
     console.log(droppedItem)
-    const { source, destination } = droppedItem;
     console.log(destination)
-    console.log(source)
-    // Ignore drop outside droppable container
-    if (!destination || destination.index < 0 || destination.index > columns.length + 4) return;
-    if (source.droppableId === destination.droppableId) {
-      const updatedList = [...columns];
-      // Remove dragged item
-      const [reorderedItem] = updatedList.splice(source.index-4, 1);
-      // Add dropped item
-      updatedList.splice(droppedItem.destination.index-4, 0, reorderedItem);
-      // Update State
-      setColumns(updatedList);
+    const vals = transactions.map(transaction => {
+      return {id: transaction.id, value: transaction.values[droppedItem.col]}
+    })
+    console.log(vals)
+    const newTargets = [...targets]
+    const targetItem = targetValues.find(item => item.column === destination.column);
+    if (targetItem) {
+      // Modify the 'values' array as needed. For example, adding a date string:
+      targetItem['values'] = vals
     }
-    else {
-      if (destination.index < 0 || destination.index > 3) return
-      const newTargets = [...targets]
-      const vals = transactions.map(transaction => {
-        return {id: transaction.id, value: transaction.values[droppedItem.draggableId]}
-      })
-      newTargets[destination.index] = {'column': columnMap[destination.index], 'values': vals}
-      console.log(newTargets)
-      setTargets(newTargets)
-      const updatedList = [...columns];
-      const removed = updatedList.splice(source.index-4, 1);
-      setColumns(updatedList);
-    }
+    console.log("newTargets", newTargets)
+    setTargets(newTargets)
+    const updatedList = [...columns];
+    updatedList.splice(droppedItem.index, 1);
+    setColumns(updatedList);
 
   };
 
@@ -192,7 +185,7 @@ export default function AddData() {
         <div className="absolute left-[6.15%] right-[2.14%] top-[32.06%]">
           <div className="flex flex-row items-center justify-center text-lg bg-gray-900">
             {targets.map((item, index) => (
-            <DroppableColumn key={index} col={item} index={index} type={'transactions-col'} >
+            <DroppableColumn key={index} col={item} index={index} type={'transactions-col'} handleDrop={handleDrop}>
               <div
                   className="box-border p-6 m-4 h-[20vh] w-[10vw] border border-yellow-400 rounded-md overflow-auto"
                   style={{transform: "none"}}
