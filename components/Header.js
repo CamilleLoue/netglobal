@@ -9,10 +9,10 @@ import logo from "@/app/logo.svg";
 import config from "@/config";
 
 const links = [
-  {
-    href: "/#pricing",
-    label: "Pricing",
-  },
+  // {
+  //   href: "/#pricing",
+  //   label: "Pricing",
+  // },
   {
     href: "/#testimonials",
     label: "Reviews",
