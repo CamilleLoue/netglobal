@@ -6,7 +6,7 @@ NetGlobal is a Next.js application developed in JavaScript, designed to provide 
 Website
 --------
 
-Find the website at netglobal.io
+Find the website at https://netglobal.io
 
 
 License
